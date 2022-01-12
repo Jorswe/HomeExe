@@ -8,7 +8,7 @@ Created on Wed Jan 12 12:08:18 2022
 
 class Person:
     
-    def __init__(self,first_name, family_name, age):
+    def __init__(self, first_name, family_name, age):
         if age < 0 and age > 150:
             raise ValueError("Age must be between 0 and 150 ")
             
@@ -44,7 +44,7 @@ class HappyTalker(Talker):
 class SlowTalker(Talker):
     
     def talk(self, text):
-        return text.replace(""," ")
+        return text.replace("", " ")
 
 
 class StutterTalker(Talker):
