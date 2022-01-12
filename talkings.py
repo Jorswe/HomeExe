@@ -50,7 +50,7 @@ class SlowTalker(Talker):
 class StutterTalker(Talker):
     
     def talk(self, text):
-        text_as_string=text.split()
+        text_as_string = text.split()
         
         for string_num in range(len(text_as_string)):
             text_as_string[string_num] = (2 * text_as_string[string_num][0]
