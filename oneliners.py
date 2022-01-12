@@ -7,11 +7,14 @@ Created on Tue Jan 11 12:06:49 2022
 import statistics as stats
 
  
-ListDiffAverage=lambda list1,list2 : stats.mean( abs(list1[n] - list2[n]) for n in range(len(list1)))
+list_diff_average = lambda list1, list2: stats.mean( abs(list1[n] - list2[n]) for n in range(len(list1)))
 
-NoSpacesInBegining=lambda listofstring: [string.lstrip() for string in listofstring]
 
-NoSpacesBeginingEnding=lambda string:' '.join(string.split())
+no_spaces_in_begining = lambda list_of_string: [string.lstrip() for string in list_of_string]
 
-FindDuplicates=lambda list1 :True if len(set(list1))!=len(list1) else False
+
+no_spaces_begining_ending = lambda string: ' '.join(string.split())
+
+
+find_duplicates = lambda list1: True if len(set(list1)) != len(list1) else False
 

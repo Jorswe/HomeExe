@@ -4,8 +4,10 @@ Created on Mon Jan 10 19:22:39 2022
 
 @author: Yarden
 """
-decoratorMemory=[]
-def decorator(func):
+
+
+decorator_memory=[]
+def save_repeted_returns(function):
     """
     Decorator for heavy duty function
     
@@ -19,18 +21,17 @@ def decorator(func):
         function output.
 
     """
-    def inner(*args,**kargs):
-        for line in decoratorMemory:
-            if(line[1] == args and func == line[0]):
-                return (line[2])   
-        decoratorMemory.append((func,args,func(args)))   
-        return decoratorMemory[len(decoratorMemory)-1][2]
-    return inner 
-    
+    def inner(*args, **kargs):
+        for line in decorator_memory:
+            if(line[1] == args and function == line[0]):
+                return (line[2])
+        decorator_memory.append((function,args, function(args)))
+        return decorator_memory[len(decorator_memory) - 1][2]
+    return inner
     
 
-@decorator
-def fibonachi(args):
+@save_repeted_returns
+def fibonachi(args, *kwargs):
   
     """
     Parameters
@@ -42,13 +43,13 @@ def fibonachi(args):
     int
         The number in the location 
     """
-    if (len(args) != 1):
+    if len(args) != 1:
         return -1
     location=args[0]
-    if (location <= 2):
+    if location <= 2:
         return 1
-    else :
-        return fibonachi(location - 2)+fibonachi(location - 1)
+    else:
+        return fibonachi(location - 2) + fibonachi(location - 1)
 
    
 
